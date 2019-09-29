@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import revision.exception.RevisionException;
 import revision.service.IRevisionCompareService;
 
+/**
+ * Rest controller for the revision compare tool
+ * 
+ * @author Kevin
+ *
+ */
 @RestController
 public class RevisionController {
 	
@@ -18,6 +24,13 @@ public class RevisionController {
 	@Autowired
 	private IRevisionCompareService revisionCompareService;
 	
+	/**
+	 * URL mapping for comparing revisions
+	 * 
+	 * @param revisionOne
+	 * @param revisionTwo
+	 * @return
+	 */
 	@GetMapping("/revisionCompare")
 	public String compareRevision(@RequestParam String revisionOne, @RequestParam String revisionTwo) {
 		
